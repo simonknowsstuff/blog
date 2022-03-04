@@ -22,7 +22,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Build
-        run: python /generator.py # The build command of your project
+        run: python generator.py # The build command of your project
     
       - name: Push
         uses: s0/git-publish-subdir-action@develop
