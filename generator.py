@@ -15,7 +15,7 @@ def read_template(filetype):
 
 def determine_post_class(item_index):
     if (item_index % 2) == 0: return str(1)
-    else: return str(0)
+    else: return str(2)
 
 def return_p_date(elem): return dt.datetime.strptime(elem.p.string, '%d-%m-%Y')
 
@@ -38,7 +38,7 @@ def generate_index():
                 post_summary = md.Meta["summary"][0]
                 post_date = md.Meta["date"][0]
                 
-                new_div = soup.new_tag("div", **{'class':'post-' + determine_post_class(item_index), 'class': 'post'})
+                new_div = soup.new_tag("div", **{'class':'post-' + determine_post_class(item_index) + ' post'})
                 new_div_str = "<h3><a href=\"posts/" + item.name[:-3] + ".html\">" + post_title + "</a></h3><p class=\"post_date\">" + post_date + "</p><p>" + post_summary + "</p>"
                 new_div.append(BeautifulSoup(new_div_str, 'html.parser'))
                 posts_tag.append(new_div)
@@ -67,7 +67,6 @@ def generate_posts():
         os.mkdir('output/posts')    
     for file in os.scandir('content'):
         if file.is_file() and file.path.lower().endswith('.md'):
-
             with open(file.path) as f:
                 soup = BeautifulSoup(read_template('post'), 'html.parser')
                 post_container = soup.find('div', {'id': 'post-container'})

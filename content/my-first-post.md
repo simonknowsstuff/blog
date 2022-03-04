@@ -13,4 +13,5 @@ I'm a high school student, creating stuff and interested about computers and tec
 Good question. Frankly, I have no idea. I think it has to do more with testing my code for a blog generator I made in python rather than actually wanting one, which I'll write a post about on in detail later on! :D
 
 ## Where can I contact you aside from these blog posts?
-Shoot me an email over at simonknowsstuff@gmail.com! I may be slow to respond as it is less than common I check my email. I will try to respond as fast as possible though :)
+Shoot me an email over at [simonknowsstuff@gmail.com!](mailto:simonknowsstuff@gmail.com) I may be slow to respond as it is less than common I check my email. I will try to respond as fast as possible though :)
+
