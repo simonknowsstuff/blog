@@ -5,6 +5,8 @@
   <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <link href="style.css" rel="stylesheet"/>
+  <script src="script.js">
+  </script>
   <title>
    My Blog!
   </title>
@@ -17,13 +19,29 @@
    <p>
     A generated blog.
    </p>
+   <button onclick="toggle_color()">
+    Toggle Theme!
+   </button>
   </header>
   <main>
    <h2>
     Posts
    </h2>
    <div id="posts">
-    <div class="post">
+    <div class="post-2 post">
+     <h3>
+      <a href="posts/more-about-blog.html">
+       Technical details about the blog
+      </a>
+     </h3>
+     <p class="post_date">
+      04-03-2022
+     </p>
+     <p>
+      Explanation on how the blog works technically.
+     </p>
+    </div>
+    <div class="post-1 post">
      <h3>
       <a href="posts/my-first-post.html">
        My First Post here!
@@ -38,8 +56,5 @@
     </div>
    </div>
   </main>
-  <footer>
-   This post was made using an automation program written in python. Learn more from the creator's repository!
-  </footer>
  </body>
 </html>
