@@ -80,7 +80,7 @@ a {
     background-color: var(--base-clr-1);
     color: var(--base-clr-2);
 }
-a:hover { padding: 12px; }
+a:hover { padding: 10px; }
 a:link { text-decoration: none; }
 a:visited { text-decoration: none; }
 a:hover { text-decoration: none; }
@@ -90,13 +90,13 @@ button {
     background-color: var(--base-clr-1);
     color: var(--base-clr-2);
     border: none;
-    padding: 10px;
+    padding: 8px;
     font-family: 'Shaggy', sans-serif;
     font-size: large;
     cursor: pointer;
     outline: inherit;
 }
-button:hover { padding: 12px; }
+button:hover { padding: 10px; }
 
 /* Different styles for posts */
 #post-container a {

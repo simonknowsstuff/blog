@@ -29,7 +29,6 @@ def generate_index():
     for item in content_dir_scan:
         if item.is_file():
             with open(item.path) as f:
-                item_index += 1
                 md = markdown.Markdown(extensions = ['meta'])
                 md.convert(f.read())
                 # md.Meta to access metadata
@@ -38,12 +37,13 @@ def generate_index():
                 post_summary = md.Meta["summary"][0]
                 post_date = md.Meta["date"][0]
                 
-                new_div = soup.new_tag("div", **{'class':'post-' + determine_post_class(item_index) + ' post'})
-                new_div_str = "<h3><a href=\"posts/" + item.name[:-3] + ".html\">" + post_title + "</a></h3><p class=\"post_date\">" + post_date + "</p><p>" + post_summary + "</p>"
+                new_div = soup.new_tag("div", **{'class':'post'})
+                new_div_str = "<h3><a href=\"posts/{name}.html\">{title}</a></h3><p class=\"post_date\">{date}</p><p>{summ}</p>"
+                new_div_str = new_div_str.format(name=item.name[:-3], title=post_title, date=post_date, summ=post_summary)
                 new_div.append(BeautifulSoup(new_div_str, 'html.parser'))
                 posts_tag.append(new_div)
-    
-    # messy post ascending date fix
+                item_index += 1
+
     posts_date: list = soup.findAll('div', {'class': 'post'})
     posts_date.sort(key=lambda a: dt.datetime.strptime(a.p.string, '%d-%m-%Y'), reverse=True)
     posts_tag.clear()
@@ -82,7 +82,7 @@ def generate_posts():
                 soup.find('link', {'rel': 'stylesheet', 'href': 'style.css'})['href'] = '../style.css'
 
                 post_container.append(BeautifulSoup(html, 'html.parser'))
-                with open('output/posts/' + file.name[:-3] + '.html', 'w') as p:
+                with open("output/posts/{}.html".format(file.name[:-3]), 'w') as p:
                     p.write(str(soup.prettify()))
 
 
