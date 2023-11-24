@@ -11,13 +11,13 @@
    My Blog!
   </title>
  </head>
- <body>
+ <body onload="color_index()">
   <header>
    <h1>
     simonknowsstuff's blog
    </h1>
    <p>
-    A generated blog.
+    A blog by simonknowsstuff for random stuff.
    </p>
    <button onclick="toggle_color()">
     Toggle Theme!
@@ -28,7 +28,20 @@
     Posts
    </h2>
    <div id="posts">
-    <div class="post-2 post">
+    <div class="post">
+     <h3>
+      <a href="posts/rant-on-a-programming-comp.html">
+       The worst programming competition ever
+      </a>
+     </h3>
+     <p class="post_date">
+      23-11-2023
+     </p>
+     <p>
+      A rant on the worst programming competition I've ever been in.
+     </p>
+    </div>
+    <div class="post">
      <h3>
       <a href="posts/more-about-blog.html">
        Technical details about the blog
@@ -41,7 +54,7 @@
       Explanation on how the blog works technically.
      </p>
     </div>
-    <div class="post-1 post">
+    <div class="post">
      <h3>
       <a href="posts/my-first-post.html">
        My First Post here!
