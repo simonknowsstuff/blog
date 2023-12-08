@@ -2,6 +2,7 @@
 title: Technical details about the blog
 date: 04-03-2022
 summary: Explanation on how the blog works technically.
+draft: False
 ---
 
 I would like to mention that the source code of the blog is available over [here,](https://github.com/simonknowsstuff/blog) so if you want to check that out and read the README file before reading the post, feel free to!

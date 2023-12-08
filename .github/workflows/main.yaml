@@ -13,16 +13,16 @@ jobs:
       - name: git-checkout
         uses: actions/checkout@v2
 
-      - name: Setup Python 3.8
+      - name: Setup Python 3.11
         uses: actions/setup-python@v1
         with:
-              python-version: 3.8
+              python-version: 3.11
         
       - name: Install Dependencies
         run: pip install -r requirements.txt
 
       - name: Build
-        run: python generator.py # The build command of your project
+        run: python generator.py --clean_output
     
       - name: Push
         uses: s0/git-publish-subdir-action@develop

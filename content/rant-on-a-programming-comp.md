@@ -2,6 +2,7 @@
 title: The worst programming competition ever
 date: 23-11-2023
 summary: A rant on the worst programming competition I've ever been in.
+draft: False
 ---
 
 On the 18th of November, 2023, I had the opportunity to participate in a high school python programming challenge hosted by a school nearby which was strange considering there hadn't been a competition ever heard of like it over where I live. Most school-based competitions tend to be for art, dancing, or literature so this was a great opportunity given to me by one of the computer science teachers of my school. Without thinking twice, I agreed to participate along with my friend Sam and we were off to go... except for the fact that there was 0 info whatsoever on any sort of guidelines or what to look for in the competition which now, in hindsight, was a huge red flag that I should've recollected in my head multiple times. I had low hopes on the quality of the problems they may ask but nevertheless I felt like it was an opportunity I shouldn't pass up.

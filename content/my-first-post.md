@@ -2,6 +2,7 @@
 title: My First Post here!
 date: 28-02-2022
 summary: A bit about the blog. And a sentence or two about me.
+draft: False
 ---
 ## Hey, hello!
 Hello! My name's Simon and this blog is about stuff I find interesting from tech to science, or even stuff I don't really know a lot about like cooking! I will probably post almost once in a week depending on the amount of free time I have.
