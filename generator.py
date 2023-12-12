@@ -6,20 +6,16 @@ from bs4 import BeautifulSoup as bsoup
 import datetime as dt
 
 BUILD_DRAFT = False
+CURRENT_TEMPLATE_PATH = 'templates/default/'
 
 def read_template(filetype):
     if filetype == 'index':
-        with open('template/index.html') as f:
+        with open(f'{CURRENT_TEMPLATE_PATH}index.html') as f:
             return f.read()
     elif filetype == 'post':
-        with open('template/post.html') as f:
+        with open(f'{CURRENT_TEMPLATE_PATH}post.html') as f:
             return f.read()
     raise ValueError('filetype must be index or post')
-
-def determine_post_class(item_index):
-    if (item_index % 2) == 0:
-        return str(1)
-    return str(2)
 
 def return_p_date(elem):
     return dt.datetime.strptime(elem.p.string, '%d-%m-%Y')
@@ -58,7 +54,7 @@ def generate_index():
     return
 
 def generate_template_files():
-    for file in os.scandir('template'):
+    for file in os.scandir(CURRENT_TEMPLATE_PATH):
         if file.is_file() and file.name not in ["index.html","post.html"]:
             shutil.copy2(file.path, 'output')
     return
@@ -111,16 +107,26 @@ def generate_posts():
 
 
 def main():
+    arg_index = 0
     for raw_arg in sys.argv:
         if raw_arg.startswith('--'):
             arg = raw_arg[2:]
             match arg:
-                case 'build_draft':
+                case 'build-draft':
                     global BUILD_DRAFT 
                     BUILD_DRAFT = True
-                case 'clean_output':
+                case 'clean-output':
                     if os.path.isdir('output'):
                         shutil.rmtree('output')
+                case 'template':
+                    template = sys.argv[arg_index + 1]
+                    # Check if template exists in directory:
+                    if os.path.isdir('templates/' + template):
+                        global CURRENT_TEMPLATE_PATH
+                        CURRENT_TEMPLATE_PATH = 'templates/{}/'.format(template)
+                    print(CURRENT_TEMPLATE_PATH)
+        arg_index += 1
+
     if not os.path.isdir('output'):
         os.mkdir('output')
         os.mkdir('output/posts')

@@ -1,0 +1,115 @@
+:root {
+    --base-clr-1: #BBCEA8;
+    --base-clr-2: #0B0A07;
+    --miscellaneous-colr: #E3D87E;
+}
+html {
+    font-size: 16px;
+}
+
+body {
+    height: 100%;
+    text-align: center;
+    color: var(--base-clr-1);
+    background-color: var(--base-clr-2);
+    font-family: monospace;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#posts {
+    border: 4px solid var(--base-clr-1);
+    min-width: 500px;
+    max-width: 70%;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.post-1 {
+    background-color: var(--base-clr-1);
+    color: var(--base-clr-2);
+}
+
+.post-2 {
+    background-color: var(--base-clr-2);
+    color: var(--base-clr-1);
+}
+
+#post-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+
+    max-width: 95%;
+    border: 4px solid var(--base-clr-1);
+}
+
+#post-container img {
+    width: 80%;
+}
+
+#post {
+    border: dotted 1px;
+}
+
+/* Fixing those ugly links and setting up buttons */
+a {
+    background-color: var(--base-clr-1);
+    color: var(--base-clr-2);
+    padding: 10px;
+}
+.post-1 a {
+    background-color: var(--base-clr-2);
+    color: var(--base-clr-1);
+}
+.post-2 a {
+    background-color: var(--base-clr-1);
+    color: var(--base-clr-2);
+}
+a:hover { padding: 10px; }
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+
+button {
+    background-color: var(--base-clr-1);
+    color: var(--base-clr-2);
+    border: none;
+    padding: 8px;
+    font-family: monospace;
+    font-size: large;
+    cursor: pointer;
+    outline: inherit;
+}
+button:hover { padding: 10px; }
+
+/* Different styles for posts */
+#post-container a {
+    background-color: var(--base-clr-2);
+    color: var(--miscellaneous-colr);
+    padding: 0%;
+    border-radius: 0%;
+}
+
+#post-container a:hover {padding: 0px;}
+#post-container a:link {text-decoration: underline;}
+
+/* Small screen size support */
+@media only screen and (max-width: 550px) {
+    #posts {
+        min-width: 300px;
+    }
+  }
