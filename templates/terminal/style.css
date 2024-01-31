@@ -65,23 +65,19 @@ main {
 }
 
 /* Fixing those ugly links and setting up buttons */
-a {
-    background-color: var(--base-clr-1);
-    color: var(--base-clr-2);
-    padding: 10px;
-}
+
 .post-1 a {
-    background-color: var(--base-clr-2);
-    color: var(--base-clr-1);
+    color: var(--base-clr-2);
 }
 .post-2 a {
-    background-color: var(--base-clr-1);
-    color: var(--base-clr-2);
+    color: var(--base-clr-1);
 }
 a:hover { padding: 10px; }
-a:link { text-decoration: none; }
+a:link { text-decoration: underline; }
 a:visited { text-decoration: none; }
-a:hover { text-decoration: none; }
+a:hover { 
+    text-decoration: underline dotted 2px;
+}
 a:active { text-decoration: none; }
 
 button {

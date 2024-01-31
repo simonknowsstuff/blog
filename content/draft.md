@@ -11,11 +11,22 @@ Etiam id tempus nisl. Morbi sodales diam vitae odio ullamcorper fringilla. Aliqu
 
 Sed tortor augue, sagittis non felis fermentum, ornare elementum massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris eleifend ligula ante, ac aliquet ante euismod quis. Nunc gravida porta diam, nec mattis nisi faucibus sit amet. Aenean ac tempor dui, eget elementum eros. Aliquam imperdiet augue ut scelerisque suscipit. Vestibulum suscipit scelerisque sagittis. Quisque ultrices commodo ante eu vulputate. Duis rhoncus finibus mi vitae blandit. Pellentesque eu neque sed dolor fringilla maximus vel at nisl. Proin tempus tristique dolor, at bibendum tortor. Cras ac aliquam urna. Donec euismod quam et est pellentesque rutrum. Maecenas vitae sodales urna, sit amet semper mauris.
 
-![A 4k image of a mountain](static/mount-everest-covered-with-snow.jpg)
-
-[Image by wirestock](https://www.freepik.com/free-photo/beautiful-scenery-summit-mount-everest-covered-with-snow-white-clouds_11062628.htm) 
+![A red vented bulbul](static/red-vented-bulbul.jpg)
+![An indian horn bill](static/indian-horn-bill.jpg)
 
 Nunc cursus erat et tortor vehicula, ac imperdiet eros sagittis. Duis vel pellentesque velit, id posuere mi. Sed dolor est, egestas vel elit in, pretium faucibus leo. Nullam at pulvinar nibh, non aliquam ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum nec est mauris. Proin lobortis urna nec sapien fermentum posuere. Integer et felis tempus, aliquet elit a, fermentum felis.
 
 Integer sit amet facilisis felis, vel efficitur nibh. In lobortis placerat nunc ut pellentesque. Vivamus consectetur ante iaculis, auctor lectus ut, sodales libero. Praesent metus dui, fringilla vitae malesuada nec, luctus eu magna. Vivamus pretium aliquam ante a finibus. Etiam bibendum dignissim dui a mollis. Suspendisse eu dapibus massa. Vivamus pharetra tellus quis diam suscipit ultricies.
 
+```
+def SORT(x):
+    l = len(x)
+    for i in range(l):
+        swapped = False
+        for j in range(l-i-1):
+            if x[j] > x[j+1]:
+                x[j], x[j+1] = x[j+1], x[j]
+                swapped = True
+        if not swapped:
+            break
+```

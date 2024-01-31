@@ -115,3 +115,25 @@ button:hover { padding: 10px; }
         min-width: 300px;
     }
   }
+
+.img-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90%
+}
+
+.img-container img {
+    flex: 0 0;
+    height: auto;
+    max-height: 260px;
+}
+
+code {
+    display: block;
+    font-size: 14px;
+    white-space: pre-wrap;
+    text-align: left;
+}

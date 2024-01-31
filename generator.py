@@ -94,15 +94,27 @@ def generate_posts():
                 For now, the program only expects image tags and files in their respective files / folders.
                 But I may update it in the future to check for other files like audio or video.
                 The code below just redirects the sources of the tags to the static directory.
-                '''
-                for img_tag in psoup.find_all('img'):
-                    img_path = img_tag['src']
-                    if img_path.startswith('static/'):
-                        img_tag['src'] = '../' + img_path                      
+                '''         
+                img_sources = []
+
+                for img in psoup.find_all('img'):
+                    if img['src'] not in img_sources and img['src'].startswith('static/'):
+                        img_sources.append(img['src'])
+                for link in img_sources:
+                    count = 0
+                    for img in psoup.find_all('img', {'src': link}):
+                        img_path = img['src']
+                        img['id'] = img_path[len('static/'):] + str(count)
+                        img['src'] = '../' + img_path
+                        if img.parent.name != 'div': # Change parent to an image container
+                            img.parent.name = 'div'
+                            img.parent['class'] = 'img-container'
+                        count += 1
 
                 post_container.append(psoup)
                 with open("output/posts/{}.html".format(file.name[:-3]), 'w') as p:
-                    p.write(str(soup.prettify()))
+                    # Used to use prettify() over here, but it seems to be interfering with the whitespace of code tags
+                    p.write(str(soup))
     return
 
 
