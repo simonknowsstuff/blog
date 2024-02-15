@@ -83,7 +83,9 @@ def generate_posts():
                 post_date_tag = soup.find('p', {'id': 'post-date'})
                 post_title_tag = soup.find('title')
                 post_heading_tag.append(md.Meta['title'][0])
-                post_date_tag.append(md.Meta['date'][0])
+                post_date_tag.append('Published on: ' + md.Meta['date'][0])
+                if md.Meta.get('edited') is not None:
+                    post_date_tag.append(' | Edited on: ' + md.Meta.get('edited', [''])[0])
                 post_title_tag.append(md.Meta['title'][0])
                 # Change css reference to parent directory
                 soup.find('link', {'rel': 'stylesheet', 'href': 'style.css'})['href'] = '../style.css'
@@ -111,6 +113,11 @@ def generate_posts():
                             img.parent['class'] = 'img-container'
                         count += 1
 
+                # Open all links in new tab
+                for anchor in psoup.find_all('a'):
+                    if not anchor['href'].startswith('../'): # Avoid links to the website itself
+                        anchor['target'] = '_blank'
+                
                 post_container.append(psoup)
                 with open("output/posts/{}.html".format(file.name[:-3]), 'w') as p:
                     # Used to use prettify() over here, but it seems to be interfering with the whitespace of code tags

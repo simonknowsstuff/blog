@@ -49,4 +49,3 @@ def substr_longest(text):
 ```
 
 It's basically a modification of the previous code except over here, we loop through all the characters of the string and break only when there's a repeating character. I'm sure there might be shorter ways to do it, but since this program seems to be tidy enough, I'm keeping it here. I would love to see other approaches to the same problem though! :D
-
