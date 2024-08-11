@@ -103,6 +103,6 @@ def build(index_dict): # The mandatory funciton required by the generator.py scr
         f.write(generate_index_html_content(index_dict))
     print('Generating post files...')
     for item in index_dict['posts']:
-        with open(f'output/posts/{item['filename']}.html', 'w') as f:
+        with open(f'output/posts/{item["filename"]}.html', 'w') as f:
             f.write(generate_post_html_content(item))
     return
